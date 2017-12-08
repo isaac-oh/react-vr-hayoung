@@ -38,15 +38,19 @@ export default class GDVR_REACTVR_SITEPOINT_GALLERY extends React.Component {
     super();
 
     this.state = {
-      src: 'chess-world.jpg',
+      src: 'ecosystems-home.jpg',
+      videoUrl: 'rainforest-360.mp4'
     };
   }
 
   render() {
     return (
       <View>
-        <Canvas
+        {/* <Canvas
           src={this.state.src}
+        /> */}
+        <VideoPano
+          source={asset(this.state.videoUrl, {layout: 'SPHERE'})}
         />
         <UI
           buttonConfig={Config}
@@ -66,7 +70,7 @@ export default class GDVR_REACTVR_SITEPOINT_GALLERY extends React.Component {
             textAlignVertical: 'center',
             transform: [{translate: [0, 1, -3]}],
           }}>
-          Find the letters
+          ECOSYSTEMS
         </Text>
       </View>
     );
